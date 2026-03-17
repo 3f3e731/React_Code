@@ -1,0 +1,473 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background:
+        radial-gradient(circle at 20% 20%, #1f1f1f, #000000 70%);
+    color: white;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* LOGO */
+
+.logo {
+    text-align: center;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 70px;
+    letter-spacing: 6px;
+    margin: 40px 0;
+    color: #ff2c2c;
+    text-shadow: 0 0 20px rgba(255, 0, 0, 0.7);
+}
+
+/* GRID */
+
+.anime-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 35px;
+    padding: 30px 60px;
+}
+
+/* CARD */
+
+.anime-card {
+    position: relative;
+    border-radius: 18px;
+    overflow: hidden;
+    background: #111;
+    transition: all .35s ease;
+    cursor: pointer;
+}
+
+.anime-card:hover {
+    transform: scale(1.06) translateY(-6px);
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.8),
+        0 0 20px rgba(255, 0, 0, 0.3);
+}
+
+/* POSTER */
+
+.anime-poster {
+    width: 100%;
+    height: 340px;
+    object-fit: cover;
+    transition: 0.4s;
+}
+
+.anime-card:hover .anime-poster {
+    transform: scale(1.12);
+}
+
+/* INFO OVERLAY */
+
+.anime-info {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(transparent,
+            rgba(0, 0, 0, 0.85));
+}
+
+.anime-info h3 {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.jp {
+    font-size: 13px;
+    opacity: 0.7;
+}
+
+/* BADGES */
+
+.badges {
+    margin-top: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.rating {
+    background: #ff2c2c;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.episodes {
+    background: #1f2937;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 13px;
+}
+
+/* SCROLLBAR */
+
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #ff2c2c;
+    border-radius: 10px;
+}
+
+
+
+.search-container {
+    display: flex;
+    justify-content: center;
+    margin: 30px 0 50px 0;
+}
+
+.search-wrapper {
+    position: relative;
+    width: 420px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    opacity: 0.6;
+}
+
+.search-input {
+    width: 100%;
+    padding: 14px 18px 14px 45px;
+    border-radius: 40px;
+    border: none;
+    outline: none;
+
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(10px);
+
+    color: white;
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+
+    transition: all .3s ease;
+}
+
+/* placeholder */
+
+.search-input::placeholder {
+    color: #9ca3af;
+}
+
+/* hover */
+
+.search-input:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+/* focus glow */
+
+.search-input:focus {
+    background: rgba(255, 255, 255, 0.15);
+    box-shadow:
+        0 0 0 2px rgba(255, 0, 0, 0.5),
+        0 8px 25px rgba(0, 0, 0, 0.6);
+}
+
+/* responsive */
+
+@media(max-width:600px) {
+    .search-wrapper {
+        width: 90%;
+    }
+}
+
+.details-page {
+    min-height: 100vh;
+    background: #0b0b0b;
+    color: white;
+}
+
+/* HERO BACKGROUND */
+
+.details-hero {
+    padding: 60px 80px;
+
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.85),
+            rgba(0, 0, 0, 0.95)),
+        radial-gradient(circle at top, #1f1f1f, #000);
+
+    min-height: 100vh;
+}
+
+/* GRID */
+
+.details-grid {
+    /* display: grid;
+    grid-template-columns: 300px 1fr;
+    gap: 50px;
+    align-items: start;
+    */
+    gap: 48px;
+    padding-top: 2%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/* POSTER */
+
+.details-poster {
+    height: 50vh;
+    border-radius: 16px;
+    box-shadow:
+        0 20px 40px rgba(0, 0, 0, 0.8);
+}
+
+/* TITLE */
+
+.details-title {
+    font-size: 40px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.details-jp {
+    opacity: 0.6;
+    margin-bottom: 15px;
+}
+
+/* STATS */
+
+.details-stats {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.details-stats span {
+    background: #1f2937;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+/* GENRES */
+
+.genres {
+    margin-bottom: 25px;
+}
+
+.genres span {
+    background: #e50914;
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 13px;
+    margin-right: 10px;
+}
+
+/* SYNOPSIS */
+
+.synopsis h3 {
+    margin-bottom: 10px;
+}
+
+.synopsis p {
+    line-height: 1.6;
+    max-width: 700px;
+    color: #d1d5db;
+}
+
+/* RESPONSIVE */
+
+@media(max-width:900px) {
+
+    .details-grid {
+        /* grid-template-columns: 1fr; */
+        display: flex;
+        flex-direction: column;
+    }
+
+    /* .details-poster {
+        width: 250px;
+    } */
+
+}
+
+
+
+/* Page Background */
+.details-container {
+    min-height: 100vh;
+    padding: 40px;
+    background: linear-gradient(135deg, #0f0f0f, #1a1a2e);
+    color: white;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Main Grid */
+.details-grid {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 40px;
+    background: rgba(255, 255, 255, 0.05);
+    padding: 30px;
+    border-radius: 20px;
+    backdrop-filter: blur(12px);
+    box-shadow: 0 0 25px rgba(255, 0, 150, 0.2);
+}
+
+/* Poster */
+.details-poster {
+    width: 100%;
+    border-radius: 14px;
+    transition: transform 0.4s ease;
+}
+
+.details-poster:hover {
+    transform: scale(1.05);
+}
+
+/* Anime Info */
+.details-info h1 {
+    font-size: 34px;
+    margin-bottom: 8px;
+    color: #ff4da6;
+}
+
+.jp {
+    opacity: 0.7;
+    margin-bottom: 20px;
+}
+
+/* Stats Row */
+.stats {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.stats span {
+    background: rgba(255, 255, 255, 0.08);
+    padding: 6px 12px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+/* Info text */
+.details-info p {
+    margin: 6px 0;
+    font-size: 15px;
+}
+
+/* Genres / Tags */
+.genres span,
+.studios span,
+.producers span,
+.themes span {
+    display: inline-block;
+    margin: 6px 6px 0 0;
+    padding: 6px 12px;
+    border-radius: 20px;
+    background: linear-gradient(45deg, #ff4da6, #7c4dff);
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.genres span:hover,
+.studios span:hover,
+.producers span:hover,
+.themes span:hover {
+    transform: scale(1.1);
+}
+
+/* Section Titles */
+.genres h3,
+.studios h3,
+.producers h3,
+.themes h3 {
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: #ff4da6;
+}
+
+/* Synopsis Card */
+.synopsis {
+    margin-top: 40px;
+    padding: 25px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 15px;
+    backdrop-filter: blur(10px);
+}
+
+.synopsis h2 {
+    color: #ff4da6;
+    margin-bottom: 10px;
+}
+
+/* Trailer */
+/* Trailer Section */
+.trailer-container {
+    margin-top: 50px;
+    padding: 30px;
+    background: rgba(255, 255, 255, 0.04);
+    border-radius: 18px;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.6);
+}
+
+/* Title */
+.trailer-title {
+    font-size: 26px;
+    margin-bottom: 20px;
+    color: #ff4da6;
+    letter-spacing: 1px;
+}
+
+/* Responsive Video */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    /* 16:9 */
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 0 25px rgba(255, 0, 150, 0.3);
+}
+
+/* iframe styling */
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* Hover animation */
+.video-wrapper:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease;
+    box-shadow: 0 0 35px rgba(255, 0, 150, 0.6);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .details-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .stats {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+}
